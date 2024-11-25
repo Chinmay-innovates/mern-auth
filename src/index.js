@@ -9,7 +9,6 @@ const app = express();
 
 app.use(express.json());
 
-// app.set("view engine", "hbs");
 app.set("view engine", "ejs");
 
 app.set("views", path.join(__dirname, "../templates"));
