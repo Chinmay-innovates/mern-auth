@@ -1,9 +1,7 @@
 const mongoose = require("mongoose");
 
 mongoose
-	.connect(
-		process.env.MONGODB_URL || "mongodb://localhost:27017/loginDB",
-	)
+	.connect(process.env.MONOGO_URL)
 	.then(() => console.log("MONGODB Connected..."))
 	.catch((err) => console.error("Error connecting to MONGODB", err));
 
@@ -14,6 +12,10 @@ const LoginSchema = mongoose.Schema(
 			required: true,
 		},
 		password: {
+			type: String,
+			required: true,
+		},
+		hashedPassword: {
 			type: String,
 			required: true,
 		},
